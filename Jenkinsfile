@@ -3,6 +3,7 @@ node{
       git 'https://github.com/Rahulgautam12233/svn-repo'
    }
    stage('Compile-Package'){
-       sh 'mvn clean package'
+      def mvnHOME=tool name: 'Maven-3', type: 'maven' 
+      sh "${mvnHOME}/bin/mvn clean package"
    }
 }
