@@ -12,12 +12,12 @@ node{
       Thanks,
       Rahul Gautam''', cc: '', from: '', replyTo: '', subject: 'Jenkins Jobs', to: 'rahulgautam12233@gmail.com' 
    }
-   stage('JAVA Home'){
-     env.JAVA_HOME="${tool 'jdk-8'}"
-     env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
-     sh 'java -version'  
-   
+   stage('Slack notification'){
+       slackSend baseUrl: 'https://hooks.slack.com/services/',
+          channel: '#jenkinspipelinedemo', color: 'good',
+          message: 'Welcome to slack!', teamDomain: 'gautamdevops', tokenCredentialId: 'slackdemo'  
    }
+     
    
    
 }
