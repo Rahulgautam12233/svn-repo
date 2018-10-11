@@ -1,4 +1,11 @@
-node{
+#!groovy
+pipeline{
+   agent{lable 'Prdeix'}
+   environment {
+     GIT_Access= credentials('jenkins')
+   }
+   
+   
    stage('SCM Checkout'){
       git 'https://github.com/Rahulgautam12233/svn-repo'
    }
